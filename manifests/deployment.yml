@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "lk2-ebaa"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "lk2-ebaa"
+  template:
+    metadata:
+      labels:
+        app: "lk2-ebaa"
+    spec:
+      containers:
+        - name: "lk2-ebaa"
+          image: "lksda.azurecr.io/lk2"
+          ports:
+          - containerPort: 80
